@@ -1,9 +1,10 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { APIkey } from '../../config/key'
 import { ContainerStyled } from './styles'
 
 function Details() {
+    const navigate = useNavigate()
     const image_path = 'https://image.tmdb.org/t/p/w500'
     const { id } = useParams()
     const fetchDetails = `https://api.themoviedb.org/3/movie/${id}?api_key=${APIkey}&language=en-US`
@@ -29,6 +30,10 @@ function Details() {
         
     }, [id])
 
+    const handleBackButton = () => {
+        navigate('/')
+    }
+
     return (
         <ContainerStyled>
             <div className="movie">
@@ -40,11 +45,9 @@ function Details() {
                         className='release-date'>
                         Release date: {movie.releaseDate}
                     </span>
-                    <Link to='/'>
-                        <button className='btn'>
+                        <button onClick={handleBackButton} className='btn'>
                             Go Back
                         </button>
-                    </Link>
                 </div>
             </div>
         </ContainerStyled>
