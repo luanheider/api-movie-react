@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { APIkey } from '../../config/key'
-import { ContainerStyled } from './styles'
+import { Container } from './styles'
 
 function Details() {
     const navigate = useNavigate()
@@ -35,7 +35,7 @@ function Details() {
     }
 
     return (
-        <ContainerStyled>
+        <Container>
             <div className="movie">
                 <img src={movie.image} alt={movie.sinopse} />
                 <div className="details">
@@ -50,7 +50,7 @@ function Details() {
                         </button>
                 </div>
             </div>
-        </ContainerStyled>
+        </Container>
     )
 }
 

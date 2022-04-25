@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ContaierStyled = styled.div`
+export const Contaier = styled.div`
 
     h1 {
         text-align: center;
@@ -8,7 +8,7 @@ export const ContaierStyled = styled.div`
     }
 `
 
-export const MovieListStyled = styled.ul`
+export const MovieList = styled.ul`
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -16,7 +16,7 @@ export const MovieListStyled = styled.ul`
     row-gap: 3.5rem;
 `
 
-export const MovieStyled = styled.li`
+export const Movie = styled.li`
     display: flex;
     flex-direction: column;
     align-items: center;

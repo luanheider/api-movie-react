@@ -1,4 +1,4 @@
-import { ContaierStyled, MovieListStyled, MovieStyled } from './styles'
+import * as C from './styles'
 import { APIkey } from '../../config/key'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
@@ -24,22 +24,22 @@ function Home() {
     }, [])
 
     return (
-       <ContaierStyled>
+       <C.Contaier>
            <h1>Movies</h1>
 
-           <MovieListStyled>
+           <C.MovieList>
                { movies.map(movie => {
                    return (
-                    <MovieStyled key={movie.id}>
+                    <C.Movie key={movie.id}>
                         <Link to={`/details/${movie.id}`}>
                             <img src={`${image_path}${movie.poster_path}`} alt={movie.title} />
                         </Link>
                         <span>{movie.title}</span>
-                    </MovieStyled>
+                    </C.Movie>
                    )
                }) }
-           </MovieListStyled>
-       </ContaierStyled>
+           </C.MovieList>
+       </C.Contaier>
     )
 }
 
